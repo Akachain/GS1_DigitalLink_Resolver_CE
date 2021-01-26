@@ -4,6 +4,7 @@ kind: Service
 
 metadata:
   name: id-service
+  namespace: tracer
   labels:
     app: resolver-web-server
     tier: frontend
@@ -27,6 +28,7 @@ kind: Deployment
 
 metadata:
   name: resolver-web-server-deployment
+  namespace: tracer
   labels:
     app: resolver-web-server
     tier: frontend

@@ -7,6 +7,7 @@ metadata:
   labels:
     app: frontend-proxy-server
     tier: frontend
+  namespace: tracer
 
 spec:
   type: LoadBalancer
@@ -28,6 +29,7 @@ metadata:
   labels:
     app: frontend-proxy-server
     tier: frontend
+  namespace: tracer
 
 spec:
   replicas: 2

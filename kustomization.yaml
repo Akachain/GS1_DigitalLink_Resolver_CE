@@ -1,5 +1,6 @@
 secretGenerator:
   - name: sqldbconn
+    namespace: tracer
     literals:
       - user=sa
       - password=its@SECR3T!
@@ -14,3 +15,4 @@ resources:
   - k8s/resolver-mongo-server.yaml
   - k8s/resolver-web-server.yaml
   - k8s/digitallink-toolkit-server.yaml
+  - k8s/namespace.yaml

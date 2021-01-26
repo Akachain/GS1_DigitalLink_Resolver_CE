@@ -3,6 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: resolver-sql-service
+  namespace: tracer
   labels:
     app: resolver-sql-server
     tier: sqldb
@@ -19,6 +20,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: resolver-sql-pv-claim-22
+  namespace: tracer
   labels:
     app: resolver-sql-server
     tier: sqldb
@@ -27,12 +29,58 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 20Gi
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: resolver-sql-pv-claim-23
+  namespace: tracer
+  labels:
+    app: resolver-sql-server
+    tier: sqldb
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: resolver-sql-pv-claim-24
+  namespace: tracer
+  labels:
+    app: resolver-sql-server
+    tier: sqldb
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: resolver-sql-pv-claim-25
+  namespace: tracer
+  labels:
+    app: resolver-sql-server
+    tier: sqldb
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: resolver-sql-server
+  namespace: tracer
   labels:
     app: resolver-sql-server
     tier: sqldb
@@ -99,10 +147,10 @@ spec:
             claimName: resolver-sql-pv-claim-22
         - name: resolver-sql-server-volume-db-log
           persistentVolumeClaim:
-            claimName: resolver-sql-pv-claim-22
+            claimName: resolver-sql-pv-claim-23
         - name: resolver-sql-server-volume-db-secrets
           persistentVolumeClaim:
-            claimName: resolver-sql-pv-claim-22
+            claimName: resolver-sql-pv-claim-24
         - name: resolver-sql-server-dbbackup-volume
           persistentVolumeClaim:
-            claimName: resolver-sql-pv-claim-22
+            claimName: resolver-sql-pv-claim-25

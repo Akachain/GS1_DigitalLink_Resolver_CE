@@ -4,7 +4,7 @@ kind: Service
 
 metadata:
   name: data-entry-service
-
+  namespace: tracer
   labels:
     app: resolver-data-entry-server
     tier: frontend
@@ -27,6 +27,7 @@ kind: Deployment
 
 metadata:
   name: resolver-data-entry-server-deployment
+  namespace: tracer
   labels:
     app: resolver-data-entry-server
     tier: frontend

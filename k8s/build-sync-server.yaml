@@ -8,6 +8,7 @@ metadata:
   labels:
     app: build-sync-service
     tier: buildsync
+  namespace: tracer
 
 spec:
   type: ClusterIP
@@ -31,6 +32,7 @@ metadata:
   labels:
     app: build-sync-service
     tier: buildsync
+  namespace: tracer
 
 spec:
   replicas: 1

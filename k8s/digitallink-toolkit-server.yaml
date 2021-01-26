@@ -6,6 +6,7 @@ metadata:
   labels:
     app: resolver-digitallink-toolkit-server
     tier: backend
+  namespace: tracer
 
 spec:
   type: ClusterIP
@@ -29,6 +30,7 @@ metadata:
   labels:
     app: resolver-digitallink-toolkit-server
     tier: backend
+  namespace: tracer
 
 spec:
   replicas: 3
